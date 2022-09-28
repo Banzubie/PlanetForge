@@ -1,0 +1,104 @@
+body {
+  background-image: url("./assets/2k_stars_milky_way.jpeg");
+  color: rgb(138, 195, 219);
+}
+
+select {
+  padding: 4px 20px;
+  margin: 10px;
+  border: 3px outset rgb(76, 195, 246);
+  background-color: rgb(76, 195, 246, 0.3);
+  border-radius: 6px 0px;;
+  width: fit-content;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+input[type=submit] {
+  padding: 4px 20px;
+  margin: 10px;
+  border: 3px outset rgb(76, 195, 246);
+  background-color: rgb(76, 195, 246, 0.3);
+  border-radius: 60px 0px;
+  width: fit-content;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+input[type=submit]:hover {
+  cursor: pointer;
+  color: azure;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 15rem;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: rgb(76, 195, 246, 0.3);
+  height: 0.5rem;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -4px; /* Centers thumb on the track */
+  background-color: rgb(76, 195, 246, 0.3);
+  border: 2.5px outset rgb(76, 195, 246);
+  height: 1rem;
+  width: 0.5rem;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+input[type=text] {
+  padding: 4px 20px;
+  margin: 5px;
+  border: 3px outset rgb(76, 195, 246);
+  border-radius: 6px 0px;
+  background-color: rgb(76, 195, 246, 0.3);
+  width: fit-content;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+textarea {
+  padding: 4px 20px;
+  margin: 5px;
+  border: 3px outset rgb(76, 195, 246);
+  background-color: rgb(76, 195, 246, 0.3);
+  border-radius: 6px 0px;
+  width: fit-content;
+  resize: none;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+h1 {
+  padding: 4px 20px;
+  margin: 10px;
+  border: 3px outset rgb(76, 195, 246);
+  border-radius: 60px 0px;
+  width: fit-content;
+  background-color: rgb(76, 195, 246, 0.3);
+  color:rgb(255, 141, 1);
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+#canvas-container {
+  position: relative;
+  bottom: 400px;
+  height: 700px;
+}
+
+#planetOptions {
+  position: relative;
+  float: right;
+  padding: 20px;
+  margin: 10px;
+  border: 3px outset rgb(76, 195, 246);
+  border-radius: 60px 0px;
+  width: fit-content;
+  background-color: rgb(76, 195, 246, 0.3);
+  z-index: 2;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
