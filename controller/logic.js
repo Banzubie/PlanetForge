@@ -15,7 +15,7 @@ const getPlanets = async () => {
 }
 
 const findPlanet = async (name, creator) => {
- return await pool.query(`SELECT * FROM planets WHERE name = $1 LIMIT 1;`, [name, creator])
+ return await pool.query(`SELECT * FROM planets WHERE name = $1 LIMIT 1;`, [name])
 }
 
 const addPlanet = async ({ planetImg, planetSize, hasRing, ringSize, name, creator, description}) => {

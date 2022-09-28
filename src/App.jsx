@@ -5,22 +5,27 @@ import { Canvas, useFrame, useLoader, useThree } from '@react-three/fiber'
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { TextureLoader } from 'three/src/loaders/TextureLoader'
 import * as THREE from 'three';
+import axios from 'axios';
 import Ring from './components/Ring.jsx';
 import Planet from './components/Planet.jsx';
 import PlanetOptions from './components/PlanetOptions.jsx';
-import axios from 'axios';
+import PlanetList from './components/PlanetList.jsx';
+import PlanetInfo from './components/PlanetInfo.jsx';
 
 function App() {
-
+  const [planetList, setPlanetList] = useState([]);
   const [planetSpec, setPlanetSpec] = useState({
     planetImg: 'earth_daymap',
     planetSize: '2.5',
     hasRing: false,
     ringSize: '3.1',
-    name: 'Planet Forge',
-    creator: 'Banzubie',
-    description: 'Welcome to Planet Forge! Select a planet from the list or create your own for others to see!'
+    name: 'Earth',
+    creator: 'Nature',
+    description: 'You probably live here.'
   })
+  const [showInfo, setShowInfo] = useState(false);
+  const [showList, setShowList] = useState(true);
+  const [showOptions, setShowOptions] = useState(false);
 
   const CameraController = () => {
     const { camera, gl } = useThree();
@@ -39,18 +44,32 @@ function App() {
     return null;
   };
 
-  const clickButton = (e) =>{
-    console.log('Button clicked!')
+  const clickInfo = () => {
+    setShowInfo(true)
+    setShowList(false)
+    setShowOptions(false)
+  }
+  const clickList = () => {
+    setShowInfo(false)
+    setShowList(true)
+    setShowOptions(false)
+  }
+  const clickOptions = () => {
+    setShowInfo(false)
+    setShowList(false)
+    setShowOptions(true)
   }
 
   return (
     <div>
       <h1>Planet Forge</h1>
-      <p id="description">{planetSpec.description}</p>
-      <button onClick={clickButton}>Info</button>
-      <button onClick={clickButton}>Planet</button>
-      <button onClick={clickButton}>Create</button>
-      <PlanetOptions planetSpec={planetSpec} setPlanetSpec={setPlanetSpec}/>
+      <p id="description">Welcome to Planet Forge! Select a planet from the list or create your own for others to see!</p>
+      <button onClick={clickOptions}>Create</button>
+      <button onClick={clickList}>List</button>
+      <button onClick={clickInfo}>Info</button>
+      {showInfo ? <PlanetInfo planetSpec={planetSpec}/> : null}
+      {showList ? <PlanetList planetList={planetList} setPlanetList={setPlanetList}/> : null}
+      {showOptions ? <PlanetOptions clickInfo={clickInfo} planetList={planetList} planetSpec={planetSpec} setPlanetSpec={setPlanetSpec}/> : null}
       <div id="canvas-container" >
         <Canvas>
           <CameraController />

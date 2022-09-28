@@ -2,21 +2,29 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import PlanetItem from './PlanetItem.jsx'
 
-const PlanetList = () => {
-  const [planetList, setPlanetList] = useState([]);
+const PlanetList = ({ planetList, setPlanetList }) => {
 
     useEffect(() => {
       axios.get('/getPlanets').then(data => {
-        setPlanetList(data);
+        setPlanetList(data.data);
       })
     }, [])
-    return (
-      <div id='PlanetList'>
-        {planetList.map(planet => {
-          return (<PlanetItem name={planet.name} creator={planet.creator}/>)
-        })}
-      </div>
-    )
+
+    if (planetList.length === 0) {
+      return (
+        <div>
+          <p>Loading...</p>
+        </div>
+      )
+    } else {
+      return (
+        <div id='PlanetList'>
+          {planetList.map((planet) => (
+            <PlanetItem key={planet.name} name={planet.name} creator={planet.creator}/>
+          ))}
+        </div>
+      )
+    }
 }
 
 export default PlanetList;

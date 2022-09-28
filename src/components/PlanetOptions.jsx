@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 
-const PlanetOptions = ({ planetSpec, setPlanetSpec }) => {
+const PlanetOptions = ({ clickInfo, planetList, planetSpec, setPlanetSpec }) => {
 
   const planetPick = (e) => {
     var val = e.target.value
@@ -32,10 +32,19 @@ const PlanetOptions = ({ planetSpec, setPlanetSpec }) => {
   }
 
   const submitPlanet = async (e) => {
+    setPlanetSpec(prevState => ({
+      ...prevState, name: e.target.name.value, creator: e.target.creator.value, description: e.target.description.value
+    }))
     e.preventDefault();
-    axios.post('/addPlanet', planetSpec).then(() => {
-
+    axios.get(`/findPlanet?name=${e.target.name.value}`).then(res => {
+      if (res.data.length > 0) {
+        alert('Planet name already exists, please choose a new name.')
+      } else {
+        axios.post('/addPlanet', planetSpec)
+        clickInfo();
+      }
     })
+
   }
   return (
     <div id='planetOptions'>

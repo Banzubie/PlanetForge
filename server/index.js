@@ -12,10 +12,11 @@ app.use(express.static(path.join(__dirname, '../client/public')));
 app.use(express.json());
 
 app.get('/getPlanets', (req, res) => {
+  console.log('Give me planets!')
   getPlanets().then(data => {
-    console.log(data);
+    console.log(data.rows);
     res.status(200);
-    res.send(data)
+    res.send(data.rows)
   }).catch(err => {
     console.log('Error: ', err)
     res.sendStatus(500);
@@ -24,9 +25,9 @@ app.get('/getPlanets', (req, res) => {
 
 app.get('/findPlanet', (req, res) => {
   findPlanet(req.query.name).then(data => {
-    console.log(data);
+    console.log(data.rows);
     res.status(200);
-    res.send(data)
+    res.send(data.rows)
   }).catch(err => {
     console.log('Error: ', err)
     res.sendStatus(500);
