@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import axios from 'axios';
 
 const PlanetOptions = ({ planetSpec, setPlanetSpec }) => {
 
@@ -32,6 +33,10 @@ const PlanetOptions = ({ planetSpec, setPlanetSpec }) => {
 
   const submitPlanet = async (e) => {
     e.preventDefault();
+    if ()
+    axios.post('/addPlanet', planetSpec).then(() => {
+
+    })
   }
   return (
     <div id='planetOptions'>

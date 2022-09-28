@@ -6,7 +6,7 @@ function Planet ({ planetImg, planetSize }) {
   const myMesh = React.useRef();
 
   const planetMap = useLoader(TextureLoader, `/assets/2k_${planetImg}.jpeg`)
-  https://www.solarsystemscope.com/textures/download/2k_mercury.jpg
+
   useFrame(({ clock }) => {
     const a = clock.getElapsedTime() / 20;
     myMesh.current.rotation.y = a;

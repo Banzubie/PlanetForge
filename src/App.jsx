@@ -8,6 +8,7 @@ import * as THREE from 'three';
 import Ring from './components/Ring.jsx';
 import Planet from './components/Planet.jsx';
 import PlanetOptions from './components/PlanetOptions.jsx';
+import axios from 'axios';
 
 function App() {
 
@@ -20,6 +21,13 @@ function App() {
     creator: 'Banzubie',
     description: 'Welcome to Planet Forge! Select a planet from the list or create your own for others to see!'
   })
+  const [planetList, setPlanetList] = useState([]);
+
+  useEffect(() => {
+    axios.get('/getPlanets').then(data => {
+      setPlanetList(data);
+    })
+  }, [])
 
   const CameraController = () => {
     const { camera, gl } = useThree();
