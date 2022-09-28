@@ -3,6 +3,25 @@ body {
   color: rgb(138, 195, 219);
 }
 
+button {
+  position: relative;
+  left: 79%;
+  top: -35px;
+  padding: 4px 20px;
+  margin: 10px;
+  border: 3px outset rgb(76, 195, 246);
+  background-color: rgb(76, 195, 246, 0.3);
+  border-radius: 60px 0px;
+  width: fit-content;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  z-index: 1;
+}
+
+button:hover {
+  cursor: pointer;
+  color: azure;
+}
+
 select {
   padding: 4px 20px;
   margin: 10px;
@@ -87,7 +106,7 @@ h1 {
 #canvas-container {
   position: relative;
   bottom: 400px;
-  height: 700px;
+  height: 600px;
 }
 
 #planetOptions {

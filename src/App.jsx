@@ -21,13 +21,6 @@ function App() {
     creator: 'Banzubie',
     description: 'Welcome to Planet Forge! Select a planet from the list or create your own for others to see!'
   })
-  const [planetList, setPlanetList] = useState([]);
-
-  useEffect(() => {
-    axios.get('/getPlanets').then(data => {
-      setPlanetList(data);
-    })
-  }, [])
 
   const CameraController = () => {
     const { camera, gl } = useThree();
@@ -46,10 +39,17 @@ function App() {
     return null;
   };
 
+  const clickButton = (e) =>{
+    console.log('Button clicked!')
+  }
+
   return (
     <div>
       <h1>Planet Forge</h1>
       <p id="description">{planetSpec.description}</p>
+      <button onClick={clickButton}>Info</button>
+      <button onClick={clickButton}>Planet</button>
+      <button onClick={clickButton}>Create</button>
       <PlanetOptions planetSpec={planetSpec} setPlanetSpec={setPlanetSpec}/>
       <div id="canvas-container" >
         <Canvas>

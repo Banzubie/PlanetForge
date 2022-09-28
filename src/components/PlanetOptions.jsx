@@ -33,7 +33,6 @@ const PlanetOptions = ({ planetSpec, setPlanetSpec }) => {
 
   const submitPlanet = async (e) => {
     e.preventDefault();
-    if ()
     axios.post('/addPlanet', planetSpec).then(() => {
 
     })
