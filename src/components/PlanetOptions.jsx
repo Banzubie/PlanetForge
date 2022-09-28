@@ -32,15 +32,19 @@ const PlanetOptions = ({ clickInfo, planetList, planetSpec, setPlanetSpec }) => 
   }
 
   const submitPlanet = async (e) => {
-    setPlanetSpec(prevState => ({
+    await setPlanetSpec(prevState => ({
       ...prevState, name: e.target.name.value, creator: e.target.creator.value, description: e.target.description.value
     }))
+    var temp = planetSpec;
+    temp.name = e.target.name.value
+    temp.creator = e.target.creator.value
+    temp.description = e.target.description.value
     e.preventDefault();
     axios.get(`/findPlanet?name=${e.target.name.value}`).then(res => {
       if (res.data.length > 0) {
         alert('Planet name already exists, please choose a new name.')
       } else {
-        axios.post('/addPlanet', planetSpec)
+        axios.post('/addPlanet', temp)
         clickInfo();
       }
     })

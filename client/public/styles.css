@@ -1,6 +1,9 @@
 body {
   background-image: url("./assets/2k_stars_milky_way.jpeg");
+  font-family: 'Courier New', monospace;
   color: rgb(138, 195, 219);
+  -webkit-text-stroke-width: 0.3px;
+  -webkit-text-stroke-color: black;
 }
 
 button {
@@ -10,7 +13,7 @@ button {
   margin: 10px;
   border: 3px outset rgb(76, 195, 246);
   background-color: rgb(76, 195, 246, 0.3);
-  border-radius: 60px 0px;
+  border-radius: 10px 0px;
   width: fit-content;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   z-index: 1;
@@ -74,7 +77,7 @@ input[type=text] {
   padding: 4px 20px;
   margin: 5px;
   border: 3px outset rgb(76, 195, 246);
-  border-radius: 6px 0px;
+  border-radius: 10px 0px;
   background-color: rgb(76, 195, 246, 0.3);
   width: fit-content;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
@@ -85,7 +88,7 @@ textarea {
   margin: 5px;
   border: 3px outset rgb(76, 195, 246);
   background-color: rgb(76, 195, 246, 0.3);
-  border-radius: 6px 0px;
+  border-radius: 10px 0px;
   width: fit-content;
   resize: none;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
@@ -95,7 +98,7 @@ h1 {
   padding: 4px 20px;
   margin: 10px;
   border: 3px outset rgb(76, 195, 246);
-  border-radius: 60px 0px;
+  border-radius: 10px 0px;
   width: fit-content;
   background-color: rgb(76, 195, 246, 0.3);
   color:rgb(255, 141, 1);
@@ -112,10 +115,12 @@ h1 {
 #planetOptions {
   position: relative;
   float: right;
+  top: 50px;
+  left: 280px;
   padding: 20px;
   margin: 10px;
   border: 3px outset rgb(76, 195, 246);
-  border-radius: 60px 0px;
+  border-radius: 10px 0px;
   width: fit-content;
   background-color: rgb(76, 195, 246, 0.3);
   z-index: 2;
@@ -126,11 +131,37 @@ h1 {
 #PlanetList {
   position: relative;
   float: right;
+  top: 50px;
+  left: 280px;
+  width: 200px;
   padding: 20px;
   margin: 10px;
   border: 3px outset rgb(76, 195, 246);
-  border-radius: 60px 0px;
-  width: fit-content;
+  border-radius: 10px 0px;
+  background-color: rgb(76, 195, 246, 0.3);
+  z-index: 2;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+#PlanetItem {
+  padding: 10px;
+  border: 3px outset rgb(76, 195, 246);
+  border-radius: 10px 0px;
+  background-color: rgb(76, 195, 246, 0.3);
+  z-index: 2;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+#PlanetInfo {
+  position: relative;
+  float: right;
+  top: 50px;
+  left: 280px;
+  width: 300px;
+  padding: 20px;
+  margin: 10px;
+  border: 3px outset rgb(76, 195, 246);
+  border-radius: 10px 0px;
   background-color: rgb(76, 195, 246, 0.3);
   z-index: 2;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
