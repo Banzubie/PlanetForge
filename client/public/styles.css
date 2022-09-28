@@ -121,3 +121,17 @@ h1 {
   z-index: 2;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
 }
+
+
+#PlanetList {
+  position: relative;
+  float: right;
+  padding: 20px;
+  margin: 10px;
+  border: 3px outset rgb(76, 195, 246);
+  border-radius: 60px 0px;
+  width: fit-content;
+  background-color: rgb(76, 195, 246, 0.3);
+  z-index: 2;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}

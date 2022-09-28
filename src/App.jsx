@@ -48,6 +48,7 @@ function App() {
     setShowInfo(true)
     setShowList(false)
     setShowOptions(false)
+    console.log(planetSpec)
   }
   const clickList = () => {
     setShowInfo(false)
@@ -68,7 +69,7 @@ function App() {
       <button onClick={clickList}>List</button>
       <button onClick={clickInfo}>Info</button>
       {showInfo ? <PlanetInfo planetSpec={planetSpec}/> : null}
-      {showList ? <PlanetList planetList={planetList} setPlanetList={setPlanetList}/> : null}
+      {showList ? <PlanetList clickInfo={clickInfo} planetList={planetList} setPlanetList={setPlanetList} setPlanetSpec={setPlanetSpec}/> : null}
       {showOptions ? <PlanetOptions clickInfo={clickInfo} planetList={planetList} planetSpec={planetSpec} setPlanetSpec={setPlanetSpec}/> : null}
       <div id="canvas-container" >
         <Canvas>
