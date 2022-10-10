@@ -21,4 +21,10 @@ PlanetForge is a create your own planet aplication. This was made when I was cha
 # Features
   
 ## Planet Creation
-    
+
+<details>
+  <summary>Photo</summary>
+  
+![Screen Shot 2022-10-10 at 7 28 38 AM](https://user-images.githubusercontent.com/103958999/194882685-43577452-c37d-4f3d-a40b-84d700f281ac.jpeg)
+  
+</details>
